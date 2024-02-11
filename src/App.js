@@ -5,7 +5,7 @@ function App() {
 
     // Fetching message from backend on mount
     useEffect(() => {
-        fetch("https://todo-backend.vercel.app/")
+        fetch("https://todo-backend.vercel.app")
             .then((res) => res.json())
             .then((data) => setMessage(data.message));
     }, []);
