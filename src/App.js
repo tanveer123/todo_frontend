@@ -5,7 +5,17 @@ function App() {
 
     // Fetching message from backend on mount
     useEffect(() => {
-        fetch("https://todo-backend.vercel.app/")
+        //fetch("https://todo-backend.vercel.app/")
+        axios.get('https://todo-backend.vercel.app/',{
+              method: 'GET',
+              mode: 'no-cors',
+              headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+              },
+              withCredentials: true,
+              credentials: 'same-origin',
+            })
             .then((res) => res.json())
             .then((data) => setMessage(data.message));
     }, []);
