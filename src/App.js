@@ -5,7 +5,7 @@ function App() {
 
     // Fetching message from backend on mount
     useEffect(() => {
-        fetch("http://localhost:4000")
+        fetch("https://todo-frontend-pearl-one.vercel.app")
             .then((res) => res.json())
             .then((data) => setMessage(data.message));
     }, []);
